@@ -40,7 +40,10 @@ class HomePage extends StatelessWidget {
               height: constraints.maxHeight * .90,
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsets.all(constraints.maxWidth * .09),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: constraints.maxWidth * .09,
+                    vertical: constraints.maxHeight * .05,
+                  ),
                   child: child,
                 ),
               ),
