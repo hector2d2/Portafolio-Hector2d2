@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myportafolio/pages/myproyects/widgets/card_proyect_widget.dart'; 
+import 'package:myportafolio/pages/myproyects/widgets/card_proyect_widget.dart';
 
 class MyProyectsPage extends StatelessWidget {
   const MyProyectsPage({super.key});
@@ -9,7 +9,7 @@ class MyProyectsPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Proyectos En Google Play'),
+        const Text('Proyectos En Google Play'),
         Row(
           children: [
             _miEspacioAppCard(),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart'; 
+import 'package:go_router/go_router.dart';
 
 class MenuHeaderWidget extends StatelessWidget {
   const MenuHeaderWidget({
@@ -13,15 +13,20 @@ class MenuHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: InkWell(
-        onTap: () {
-          GoRouter.of(context).go(routeName);
-        },
+    return InkWell(
+      onTap: () {
+        GoRouter.of(context).go(routeName);
+      },
+      child: Container(
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: Colors.grey,
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: Text(
           titleName,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),

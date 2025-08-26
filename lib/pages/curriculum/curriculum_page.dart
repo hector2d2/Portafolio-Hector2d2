@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:myportafolio/widgets/image_circle_avatar.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
@@ -40,14 +41,14 @@ class CurriculumPage extends StatelessWidget {
     final GlobalKey previewContainer = GlobalKey();
     return Stack(
       children: [
-        RepaintBoundary(key: previewContainer, child: PortfolioHector()),
+        RepaintBoundary(key: previewContainer, child: const PortfolioHector()),
         Positioned(
             right: 1,
             child: InkWell(
               onTap: () async {
                 await createPdfFromWidget(previewContainer);
               },
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 child: Icon(
                   Icons.picture_as_pdf_rounded,
                 ),
@@ -67,12 +68,12 @@ class PortfolioHector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        HeaderPortfolio(),
+        const HeaderPortfolio(),
         LayoutBuilder(builder: (context, constraints) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 width: constraints.maxWidth * .3,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -89,7 +90,7 @@ class PortfolioHector extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'En mi experiencia con el departamento de Recursos Humanos, tengo la experiencia de escuchar cuales son sus necesidades y con esto plantear soluciones de automatizacion o mejorar la operacion creando o actualizando un sistema. Me gusta porque son retos y nada es imposible de hacer.',
+                        'Tengo la habilidad de escuchar cuales son las necesidades y con esto plantear soluciones de automatizacion o mejorar la operacion creando o actualizando un sistema. Me gusta porque son retos y nada es imposible de hacer',
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Colors.black,
@@ -106,6 +107,14 @@ class PortfolioHector extends StatelessWidget {
                       ),
                       Text(
                         'hector_tristan_dev@hotmail.com',
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
+                          fontSize: constraints.maxWidth / 60,
+                        ),
+                      ),
+                      Text(
+                        '833-236-0979',
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Colors.black,
@@ -199,6 +208,14 @@ class PortfolioHector extends StatelessWidget {
                         ),
                       ),
                       Text(
+                        'MAUI (7 / 10)',
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
+                          fontSize: constraints.maxWidth / 60,
+                        ),
+                      ),
+                      Text(
                         'ANGULAR (8 / 10)',
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
@@ -207,7 +224,7 @@ class PortfolioHector extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'FLUTTER (10 / 10)',
+                        'FLUTTER (9 / 10)',
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Colors.black,
@@ -247,7 +264,7 @@ class PortfolioHector extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Desarrollo de aplicaciones con mi equipo de trabajo para dar soluciones a problemas de sistemas de Recursos Humanos',
+                        'Desarrollo de aplicaciones con mi equipo de trabajo para dar soluciones a problemas de sistemas de Recursos Humanos(Control de Asistencia, Sistema de Bonos, Sistema de Tableros de Control, Plataforma Interna, Encuestas, Comunicados, entre otros)',
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Colors.black,
@@ -263,7 +280,7 @@ class PortfolioHector extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Subir aplicaciones WEB/API al servidor interno con IIS y aplicaciones movil a google play',
+                        'Subir aplicaciones WEB / API al servidor interno con IIS y aplicaciones movil a google play',
                         style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Colors.black,
@@ -297,17 +314,14 @@ class HeaderPortfolio extends StatelessWidget {
           builder: (context, constraints) {
             return Row(
               children: [
-                Container(
+                SizedBox(
                   width: constraints.maxWidth * .3,
-                  child: CircleAvatar(
+                  child: ImageCircleAvatar(
                     radius: (constraints.maxWidth * .3) / 2,
-                    foregroundImage: Image.asset(
-                      'assets/images/hectorimg.jpg',
-                    ).image,
                   ),
                 ),
                 Container(width: constraints.maxWidth * .05),
-                Container(
+                SizedBox(
                   width: constraints.maxWidth * .65,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
