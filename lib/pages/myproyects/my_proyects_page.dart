@@ -6,17 +6,34 @@ class MyProyectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text('Proyectos En Google Play'),
-        Row(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _miEspacioAppCard(),
-            _procesosAppCard(),
+            Text(
+              'Proyectos En Google Play',
+              style: TextStyle(
+                fontSize: 32,
+              ),
+            ),
+            if (constraints.maxWidth > 800)
+              Row(
+                children: [
+                  Expanded(child: _miEspacioAppCard()),
+                  Expanded(child: _procesosAppCard()),
+                ],
+              )
+            else
+              Column(
+                children: [
+                  _miEspacioAppCard(),
+                  _procesosAppCard(),
+                ],
+              ),
           ],
-        ),
-      ],
+        );
+      },
     );
   }
 

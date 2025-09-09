@@ -49,16 +49,21 @@ class CardProyectWidget extends StatelessWidget {
                       width: 60,
                     ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        titleName,
-                      ),
-                      Text(
-                        subTitleName,
-                      ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          titleName,
+                          style: TextStyle(fontSize: 22),
+                          maxLines: 2,
+                        ),
+                        Text(
+                          subTitleName,
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
